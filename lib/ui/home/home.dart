@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_3d/router/page_name.dart';
 import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,16 +18,18 @@ class HomePage extends StatelessWidget {
 
   Widget _buildBody() {
     return ListView(
-      children: [],
+      children: [
+        _buildListTile(tutorialPage),
+      ],
     );
   }
 
-  Widget _buildListTile({required String title, required String path}) {
+  Widget _buildListTile(String title) {
     return Builder(builder: (context) {
       return ListTile(
         title: Text(title),
         onTap: () {
-          context.push(path);
+          context.push('/${title.toLowerCase()}');
         },
       );
     });

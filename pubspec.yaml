@@ -1,6 +1,6 @@
 name: flutter_3d
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -13,6 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   go_router: ^11.1.4
+  three_dart: ^0.0.16
 
 dev_dependencies:
   flutter_test:
