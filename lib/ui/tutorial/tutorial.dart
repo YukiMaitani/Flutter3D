@@ -21,11 +21,12 @@ class _TutorialPageState extends State<TutorialPage> {
   late three.Scene scene;
   late three.Camera camera;
   three.WebGLRenderer? renderer;
-  three.WebGLRenderTarget? renderTarget;
+  late three.WebGLMultisampleRenderTarget renderTarget;
   late three.BoxGeometry geometry;
   late three.Mesh mesh;
   late FlutterGlPlugin three3dRender;
   double dpr = 1;
+  dynamic sourceTexture;
 
   @override
   void initState() {
@@ -105,15 +106,14 @@ class _TutorialPageState extends State<TutorialPage> {
 
     if (!kIsWeb) {
       final pars = three.WebGLRenderTargetOptions({'format': three.RGBAFormat});
-      renderTarget = three.WebGLRenderTarget(
+      renderTarget = three.WebGLMultisampleRenderTarget(
         (width * dpr).toInt(),
         (height * dpr).toInt(),
         pars,
       );
-      renderTarget!.samples = 4;
+      renderTarget.samples = 4;
       renderer!.setRenderTarget(renderTarget);
-    } else {
-      renderTarget = null;
+      sourceTexture = renderer!.getRenderTargetGLTexture(renderTarget);
     }
   }
 

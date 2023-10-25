@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
     return ListView(
       children: [
         _buildListTile(tutorialPage),
+        _buildListTile(threeDModelPage),
       ],
     );
   }
