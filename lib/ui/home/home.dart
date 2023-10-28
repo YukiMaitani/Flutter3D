@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
       children: [
         _buildListTile(tutorialPage),
         _buildListTile(threeDModelPage),
+        _buildListTile(particlePage),
       ],
     );
   }

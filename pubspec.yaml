@@ -30,3 +30,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/free_fps-hands.glb
+    - assets/flutter_icon.png
+  shaders:
+    - shaders/particle.frag

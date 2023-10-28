@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_3d/router/page_name.dart';
+import 'package:flutter_3d/ui/particle/particle_page.dart';
 import 'package:flutter_3d/ui/three_d_model/three_d_model_page.dart';
 import 'package:flutter_3d/ui/tutorial/tutorial.dart';
 import 'package:go_router/go_router.dart';
@@ -23,5 +24,9 @@ final router = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: ThreeDModelPage()),
     ),
+    GoRoute(
+        path: particlePage.path,
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: ParticlePage())),
   ],
 );
